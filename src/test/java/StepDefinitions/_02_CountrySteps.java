@@ -27,11 +27,11 @@ public class _02_CountrySteps {
 
     @Then("Success message should be displayed")
     public void successMessageShouldBeDisplayed() {
-       // TODO
+        // TODO
         dc.verifyContainsTextFunction(dc.successMessage,"success");
     }
 
-    @When("Create a country name as {string} code as {string}")
+    @When("create a country name as {string} code as {string}")
     public void createACountryNameAsCodeAs(String name, String kod) {
         dc.clickFunction(dc.addButton);
         dc.sendKeysFunction(dc.nameInput , name);

@@ -1,6 +1,6 @@
 Feature: Country Multi Scenario
 
-  Background:  # Before Scenario
+  Background:
     Given Navigate to Campus
     When Enter username and password and click login button
     Then User should login succesfully
@@ -10,6 +10,6 @@ Feature: Country Multi Scenario
     When create a country
     Then Success message should be displayed
 
-    Scenario: Create a country 2
-      When Create a country name as "ismUlk113456" code as "is13312"
-      Then Success message should be displayed
+  Scenario: Create a country 2
+    When create a country name as "ismUlk1" code as "is112"
+    Then Success message should be displayed
