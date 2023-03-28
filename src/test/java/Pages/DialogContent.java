@@ -63,6 +63,7 @@ public class DialogContent extends Parent {
     @FindBy(xpath="//button[@type='submit']")
     public WebElement deleteDialogBtn;
 
+
     public void deleteMessage(String searchText) {
         sendKeysFunction(searchInput, searchText);
         clickFunction(searchButton);
@@ -71,5 +72,17 @@ public class DialogContent extends Parent {
         wait.until(ExpectedConditions.numberOfElementsToBe(By.xpath("//fuse-progress-bar/*"), 0));
         clickFunction(deleteImageBtn);
         clickFunction(deleteDialogBtn);
+    }
+
+    public WebElement getWebElement2(String strButton) {
+        switch (strButton)
+        {
+            case "addButton" : return addButton;
+            case "saveButton" : return saveButton;
+            case "nameInput" : return nameInput;
+            case "codeInput" : return codeInput;
+        }
+
+        return null;
     }
 }

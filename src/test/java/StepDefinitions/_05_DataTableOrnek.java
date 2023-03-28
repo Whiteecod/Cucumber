@@ -6,7 +6,7 @@ import io.cucumber.java.en.When;
 
 import java.util.List;
 
-public class DataTableOrnek1 {
+public class _05_DataTableOrnek {
     @When("Write username {string}")
     public void writeUsername(String userName) {
         System.out.println("userName = " + userName);
