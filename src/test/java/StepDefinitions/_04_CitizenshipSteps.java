@@ -34,6 +34,6 @@ public class _04_CitizenshipSteps {
 
     @When("User delete the {string}")
     public void userDeleteThe(String name) {
-         dc.deleteMessage(name);
+         dc.deleteItem(name);
     }
 }

@@ -5,6 +5,8 @@ import Pages.LeftNav;
 import io.cucumber.java.en.And;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
+import net.bytebuddy.utility.RandomString;
+import org.apache.commons.lang3.RandomStringUtils;
 
 public class _02_CountrySteps {
     LeftNav ln = new LeftNav();
@@ -19,9 +21,14 @@ public class _02_CountrySteps {
 
     @When("create a country")
     public void createACountry() {
+        String ulkeAdi = RandomStringUtils.randomAlphabetic(8); // 8 harf veriyor random
+        String ulkeKodu = RandomStringUtils.randomNumeric(4); // 4 rakam veriyor random
+        String asdasd = RandomString.make(8);
+        String asdaswqw = RandomString.hashOf(8);
+
         dc.clickFunction(dc.addButton);
-        dc.sendKeysFunction(dc.nameInput, "isUlk11222");
-        dc.sendKeysFunction(dc.codeInput, "111112");
+        dc.sendKeysFunction(dc.nameInput, asdasd);
+        dc.sendKeysFunction(dc.codeInput, asdaswqw);
         dc.clickFunction(dc.saveButton); // TODO
     }
 

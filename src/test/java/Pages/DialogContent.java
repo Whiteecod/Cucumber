@@ -51,7 +51,7 @@ public class DialogContent extends Parent {
     @FindBy(xpath="//div[contains(text(),'already exists')]")
     public WebElement alreadyExist;
 
-    @FindBy(xpath="(//ms-text-field/input)[1]")
+    @FindBy(xpath="//mat-form-field//input[@data-placeholder='Name']")
     public WebElement searchInput;
 
     @FindBy(xpath="//ms-search-button//button")
@@ -63,26 +63,63 @@ public class DialogContent extends Parent {
     @FindBy(xpath="//button[@type='submit']")
     public WebElement deleteDialogBtn;
 
+    @FindBy(xpath="//ms-text-field[@formcontrolname='budgetAccountIntegrationCode']//input")
+    private WebElement integrationCode;
 
-    public void deleteMessage(String searchText) {
-        sendKeysFunction(searchInput, searchText);
-        clickFunction(searchButton);
-        //wait.until(ExpectedConditions.elementToBeClickable(searchButton));
-        //fuse-proggress-bar/*
-        wait.until(ExpectedConditions.numberOfElementsToBe(By.xpath("//fuse-progress-bar/*"), 0));
-        clickFunction(deleteImageBtn);
-        clickFunction(deleteDialogBtn);
-    }
+    @FindBy(xpath="//ms-integer-field[@formcontrolname='priority']/input")
+    private WebElement priorityCode;
 
-    public WebElement getWebElement2(String strButton) {
+    @FindBy(xpath="//mat-slide-toggle[@formcontrolname='active']")
+    private WebElement toggleBar;
+
+
+    @FindBy(xpath="//mat-select//span[text()='Academic Period']")
+    private WebElement academicPeriod;
+
+    @FindBy(xpath="(//mat-option/span)[1]")
+    private WebElement academicPeriod1;
+
+    @FindBy(xpath="(//span[text()='Grade Level'])[1]")
+    private WebElement gradeLevel;
+
+    @FindBy(xpath="(//mat-option//span)[2]")
+    private WebElement gradeLevel2;
+
+
+    public WebElement getWebElement(String strButton){
+
         switch (strButton)
         {
             case "addButton" : return addButton;
             case "saveButton" : return saveButton;
             case "nameInput" : return nameInput;
             case "codeInput" : return codeInput;
+            case "integrationCode" : return integrationCode;
+            case "priorityCode" : return priorityCode;
+            case "toggleBar" : return toggleBar;
+            case "academicPeriod" : return academicPeriod;
+            case "academicPeriod1" : return academicPeriod1;
+            case "gradeLevel" : return gradeLevel;
+            case "gradeLevel2" : return gradeLevel2;
         }
 
         return null;
+    }
+
+
+
+
+    public void deleteItem(String searchText){
+        sendKeysFunction(searchInput,searchText);
+        clickFunction(searchButton);   //fuse-progress-bar/*   gözüküyor
+        //beklet
+        //1. StaleElemetn hatası verdi : erken buldum tez kaybettim
+        //wait.until(ExpectedConditions.elementToBeClickable(searchButton));
+
+        //fuse-progress-bar/*    bu 0 olana kadar beklet
+        wait.until(ExpectedConditions.numberOfElementsToBe(By.xpath("//fuse-progress-bar/*") , 0));
+
+        clickFunction(deleteImageBtn);
+        clickFunction(deleteDialogBtn);
     }
 }
