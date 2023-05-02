@@ -10,6 +10,7 @@ import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
 import java.time.Duration;
+import java.util.List;
 
 public class DialogContent extends Parent {
     // kullanıcı ile dialogla veri alan bölümler
@@ -85,6 +86,9 @@ public class DialogContent extends Parent {
     @FindBy(xpath="(//mat-option//span)[2]")
     private WebElement gradeLevel2;
 
+    @FindBy(xpath="//tr[contains(@class, 'mat-row')]/td[2]")
+    public List<WebElement> nameList;
+
 
     public WebElement getWebElement(String strButton){
 
@@ -101,6 +105,7 @@ public class DialogContent extends Parent {
             case "academicPeriod1" : return academicPeriod1;
             case "gradeLevel" : return gradeLevel;
             case "gradeLevel2" : return gradeLevel2;
+
         }
 
         return null;
