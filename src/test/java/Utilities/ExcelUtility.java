@@ -1,17 +1,12 @@
 package Utilities;
 
-import com.sun.corba.se.spi.orbutil.threadpool.Work;
 import io.cucumber.java.Scenario;
-import org.apache.commons.math3.analysis.function.Exp;
 import org.apache.poi.ss.usermodel.*;
-import org.apache.poi.xssf.usermodel.*;
 import org.apache.poi.xssf.usermodel.*;
 
 import java.io.*;
-import java.io.*;
 import java.io.IOException;
 import java.util.ArrayList;
-import java.util.Scanner;
 
 public class ExcelUtility {
     public static ArrayList <ArrayList<String>> getData (String path, String sheetName, int colCnt) throws IOException {
