@@ -7,7 +7,7 @@ import io.cucumber.testng.CucumberOptions;
         tags = "@SmokeTest", // hangi senaryolarda bu
         features = {"src/test/java/FeatureFiles"},
         glue = {"StepDefinitions"},
-        plugin = {"html:target/site/cucumber-pretty.html"}
+        plugin = {"json:target/cucumber/cucumber.json"}
         // plugin normalde yok fakat jenkins için ekleniyor.
 )
 
