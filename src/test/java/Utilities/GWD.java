@@ -51,7 +51,7 @@ public class GWD {
                 default:
                     //chrome
                     ChromeOptions options = new ChromeOptions();
-                    options.addArguments("--headless", "--no-sandbox", "--disable-dev-shm-usage", "--disable-gpu", "--window-size=1400,2400");
+                    options.addArguments("--remote-allow-origins=*");
                     threadDriver.set(new ChromeDriver(options));
                     break;
             }
