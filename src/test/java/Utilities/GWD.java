@@ -54,6 +54,9 @@ public class GWD {
                     options.addArguments("--remote-allow-origins=*");
                     threadDriver.set(new ChromeDriver(options));
                     break;
+
+                    // bu şekilde Jenkins çalışmadığında hafıza da açılan chrome u maximize etme yolu
+               //  options.addArguments("--headless", "--no-sandbox", "--disable-dev-shm-usage", "--disable-gpu", "--window-size=1400,2400");
             }
         }
 
